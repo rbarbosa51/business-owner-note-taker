@@ -5,9 +5,11 @@ const api = require('./routes/index.js');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+//Middleware needed for API calls
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', api);
+
 //Middleware sets the static pages inside the public folder
 app.use(express.static('public'));
 
@@ -15,9 +17,10 @@ app.use(express.static('public'));
 app.get('/notes', (req,res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
-//* Route
+//* (All Other) Routes
 app.get('*', (req,res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
+//Listen
 app.listen(PORT, () => console.log(`Listenining on port: ${PORT}`));
