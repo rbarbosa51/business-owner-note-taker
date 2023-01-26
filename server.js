@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-//app.use('/api', api);
+app.use('/api', api);
 //Middleware sets the static pages inside the public folder
 app.use(express.static('public'));
 
@@ -18,5 +18,6 @@ app.get('/notes', (req,res) => {
 //* Route
 app.get('*', (req,res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
-})
+});
+
 app.listen(PORT, () => console.log(`Listenining on port: ${PORT}`));
