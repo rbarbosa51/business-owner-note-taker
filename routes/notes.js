@@ -35,11 +35,12 @@ router.delete('/:id', async (req, res) => {
     let primeData = JSON.parse(rawData);
     //find the selected id
     const selectedId = primeData.find(d => d.id === req.params.id);
-    //delete the id 
+    //Get the index of the selected id and then use slice to delete it
     const index = primeData.indexOf(selectedId);
     primeData.splice(index,1);
-    console.log(JSON.stringify(primeData));
-    //write new db
+    //debug
+    //console.log(JSON.stringify(primeData));
+    //write new db.json
     await fs.writeFile(dbFile, JSON.stringify(primeData));
     res.json(primeData);
 
