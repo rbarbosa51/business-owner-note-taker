@@ -21,7 +21,7 @@ This app is meant to be viewed and operated from a browser.
 
 ## Usage
 
-To use go to: https://rbarbosa-note-taker.herokuapp.com/notes
+To use go to: https://rbarbosa-note-taker.herokuapp.com/
 
 ## License
 
