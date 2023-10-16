@@ -5,6 +5,8 @@
   "main": "server.js",
   "scripts": {
     "nodemon": "nodemon server.js",
+    "install": "npm install",
+    "build": "npm run install",
     "start": "node server.js"
   },
   "author": "",
