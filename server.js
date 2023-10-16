@@ -1,11 +1,13 @@
 const express = require("express");
 const path = require("path");
+const compression = require("compression");
 const api = require("./routes/index.js");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
 //Middleware needed for API calls
+app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", api);
